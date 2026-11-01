@@ -1,0 +1,14 @@
+{
+  "name": "luxury-connections-tools",
+  "private": true,
+  "type": "module",
+  "description": "Asset build scripts. Not part of the deployed site.",
+  "scripts": {
+    "logo": "node split-logo.mjs \"../source/LC_LOGO_Color with Tagline.svg\" ../assets",
+    "images": "node build-images.mjs .."
+  },
+  "dependencies": {
+    "sharp": "0.33.5",
+    "svg-path-bbox": "2.1.0"
+  }
+}
