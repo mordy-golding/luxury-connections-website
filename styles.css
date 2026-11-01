@@ -2,10 +2,6 @@
 
 /* Self-hosted fonts (latin subset). Inter and Source Serif 4 are variable. */
 @font-face {
-  font-family: 'Bellefair'; font-style: normal; font-weight: 400; font-display: swap;
-  src: url(assets/fonts/bellefair-latin.woff2) format('woff2');
-}
-@font-face {
   font-family: 'Inter'; font-style: normal; font-weight: 400 500; font-display: swap;
   src: url(assets/fonts/inter-latin.woff2) format('woff2');
 }
@@ -24,7 +20,6 @@
   --charcoal: #2A2A2A;
   --tint: 8, 22, 42;      /* navy-black, used in rgba() */
 
-  --display: 'Bellefair', serif;
   --sans: 'Inter', system-ui, sans-serif;
   --italic: 'Source Serif 4', Georgia, serif;
 }
@@ -179,13 +174,10 @@ img { display: block; }
   display: flex; flex-direction: column; align-items: center; gap: 22px;
   text-align: center; color: var(--navy);
 }
-.close__knot {
-  width: 56px; height: 56px;
-  background: var(--gold-deep);
-  -webkit-mask: url(assets/logo-knot.svg) center / contain no-repeat;
-          mask: url(assets/logo-knot.svg) center / contain no-repeat;
-}
-.close__name { font-family: var(--display); font-size: 16px; letter-spacing: 0.42em; margin-right: -0.42em; }
+/* Knot + wordmark from the client logo, original colors and proportions */
+.close__logo { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.close__knot { width: 56px; height: auto; }
+.close__wordmark { width: 200px; height: auto; }
 .close__line { font-family: var(--italic); font-style: italic; font-weight: 300; font-size: clamp(22px, 2.2vw, 28px); }
 
 /* =================== MOTION =================== */
@@ -214,6 +206,8 @@ img { display: block; }
   .p2 { animation-range: entry 12% cover 36%; }
   .p3 { animation-range: entry 24% cover 44%; }
   .reveal { animation-range: entry 5% cover 30%; }
+  /* Footer sits at page end and can't scroll to cover 30%; finish once fully in view */
+  .close .reveal { animation-range: entry 5% entry 100%; }
 }
 
 /* Chat loop — 18s */

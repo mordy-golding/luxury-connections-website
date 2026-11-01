@@ -12,7 +12,7 @@ Preview locally: open `index.html` in a browser, or run `python3 -m http.server`
 | `styles.css` | All styles, self-hosted fonts and animation |
 | `assets/logo-*.svg` | Knot, wordmark and tagline, split from the client logo |
 | `assets/img/` | Hero and door photos (AVIF/WebP at 640–1672px, JPEG fallback), `og.jpg` share image |
-| `assets/fonts/` | Bellefair, Inter, Source Serif 4 italic (latin subset, woff2) |
+| `assets/fonts/` | Inter, Source Serif 4 italic (latin subset, woff2) |
 | `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` | Icons |
 | `robots.txt`, `vercel.json` | Indexing and Vercel config (static, no build) |
 | `source/` | Original client files — not deployed |
